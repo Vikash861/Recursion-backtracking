@@ -31,14 +31,17 @@ vector<int> linearSearchwithAll(int *arr, int size, int target, vector<int> list
 // third way 
 vector<int>allOccurenece(int *arr,int size,int target,int index){
     vector<int>list;
-    if(index == size){
-        return list;
-    }
     if(arr[index] == target){
         list.push_back(index);
     }
+    if(index == size){
+        return list;
+    }
     vector<int>temp = allOccurenece(arr,size,target,index + 1);
-    // if()
+    list.push_back(temp[0]);
+    return list;
+
+
 }
 
 int main()
