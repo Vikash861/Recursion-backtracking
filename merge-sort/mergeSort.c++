@@ -70,6 +70,8 @@ void mergeSort(int *arr, int s, int e)
     merge(arr, s, e);
 }
 
+
+
 int main()
 {
     int arr[10] = {78, 23, 45, 65, 76, 12, 54, 21, 1, 3};
