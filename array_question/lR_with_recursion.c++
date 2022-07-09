@@ -29,7 +29,7 @@ vector<int> linearSearchwithAll(int *arr, int size, int target, vector<int> list
 }
 
 // third way 
-vector<int>allOccurenece(int *arr,int size,int target,int index){
+vector<int>allOccurenece(int *arr,int size,int target,int index = 0){
     vector<int>list;
     if(arr[index] == target){
         list.push_back(index);
@@ -37,7 +37,7 @@ vector<int>allOccurenece(int *arr,int size,int target,int index){
     if(index == size){
         return list;
     }
-    vector<int>temp = allOccurenece(arr,size,target,index + 1);
+    vector<int>temp = allOccurenece(arr,size,target);
     list.push_back(temp[0]);
     return list;
 
@@ -50,7 +50,7 @@ int main()
     int size = 10 - 1;
     // cout << linearSearch(arr, size, 90) << endl;
     vector<int> list1;
-    vector<int> list = linearSearchwithAll(arr, size, 90, list1);
+    vector<int> list = allOccurenece(arr, size, 90,0);
     for (int i = 0; i < list.size(); i++)
     {
         cout << list[i] << endl;
